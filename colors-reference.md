@@ -1,4 +1,4 @@
-# Cool QRCode 颜色参考
+# Cool QRCode Colors Reference
 
 Cool QRCode 支持多种颜色名称和十六进制颜色代码。以下是所有预设颜色的列表：
 

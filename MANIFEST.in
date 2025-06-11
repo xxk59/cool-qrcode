@@ -2,8 +2,7 @@ include README.md
 include LICENSE
 include requirements.txt
 include requirements-dev.txt
-include 小学生使用指南.md
-include 颜色参考.md
+include colors-reference.md
 recursive-include cool_qrcode *.py
 recursive-include tests *.py
 recursive-include examples *.py

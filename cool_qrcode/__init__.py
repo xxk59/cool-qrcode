@@ -2,7 +2,7 @@
 Cool QRCode - 一个用于生成个性化二维码的Python库
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __author__ = "Kelvin Xu"
 __email__ = "xxk59@hotmail.com"
 

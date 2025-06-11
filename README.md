@@ -2,7 +2,7 @@
 
 一个用于生成个性化二维码的Python库，支持自定义颜色、形状、Logo和蒙板效果。
 
-![示例二维码](docs/images/all_features.png)
+![示例二维码](https://raw.githubusercontent.com/xxk59/cool-qrcode/main/docs/images/all_features.png)
 
 ## 特性
 
@@ -42,7 +42,7 @@ make_cool_qrcode(
 )
 ```
 
-![海洋风格](docs/images/ocean_style.png)
+![海洋风格](https://raw.githubusercontent.com/xxk59/cool-qrcode/main/docs/images/ocean_style.png)
 
 ### 圆形码点
 
@@ -57,7 +57,7 @@ make_cool_qrcode(
 )
 ```
 
-![圆形码点](docs/images/circle_dots.png)
+![圆形码点](https://raw.githubusercontent.com/xxk59/cool-qrcode/main/docs/images/circle_dots.png)
 
 ### 添加Logo
 
@@ -71,7 +71,7 @@ make_cool_qrcode(
 )
 ```
 
-![带Logo](docs/images/circular_logo.png)
+![带Logo](https://raw.githubusercontent.com/xxk59/cool-qrcode/main/docs/images/circular_logo.png)
 
 ### 组合所有效果
 
@@ -110,7 +110,7 @@ make_cool_qrcode(
 )
 ```
 
-详细使用方法参见 [API文档](docs/API.md)。
+详细使用方法参见 [API文档](https://github.com/xxk59/cool-qrcode/blob/main/docs/API.md)。
 
 ## 支持的颜色
 
@@ -120,7 +120,7 @@ make_cool_qrcode(
 - 常用颜色：aqua, fuchsia, lime, maroon, navy, olive...
 - 扩展颜色：lightblue, darkgreen, lavender...
 
-详细颜色列表参见 [颜色参考](颜色参考.md)。
+详细颜色列表参见 [颜色参考](https://github.com/xxk59/cool-qrcode/blob/main/colors-reference.md)。
 
 ## 预设风格
 
@@ -135,14 +135,10 @@ make_cool_qrcode(
 - chocolate - 巧克力风格（棕色系）
 - night - 夜空风格（深蓝系）
 
-## 学生使用指南
-
-专为学生设计的简体中文使用指南：[学生使用指南](学生使用指南.md)
-
 ## 示例
 
-详细示例代码见 [examples](examples) 目录。
+详细示例代码见 [examples](https://github.com/xxk59/cool-qrcode/tree/main/examples) 目录。
 
 ## 许可证
 
-本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件 
+本项目采用 MIT 许可证 - 详见 [LICENSE](https://github.com/xxk59/cool-qrcode/blob/main/LICENSE) 文件 
