@@ -17,7 +17,8 @@ def make_cool_qrcode(
     filename: Optional[str] = None,
     size: int = 500,
     # 颜色选项
-    colors: Optional[tuple] = None,
+    fill_color: str = "black",
+    back_color: str = "white",
     style: Optional[str] = None,
     # 形状选项
     dot_shape: Literal["square", "circle"] = "square",
@@ -44,15 +45,20 @@ def make_cool_qrcode(
         size (int, 可选): 
             图片大小（像素）。默认为500像素。
         
-        colors (tuple, 可选): 
-            自定义颜色元组 (前景色, 背景色)，如 ("red", "white")。
+        fill_color (str, 可选):
+            前景色（码点颜色），默认为"black"。
             可使用颜色名称或十六进制颜色代码("#FF5733")。
-            当同时指定colors和style时，style优先。
+            当同时指定颜色和style时，style优先。
+            
+        back_color (str, 可选):
+            背景色，默认为"white"。
+            可使用颜色名称或十六进制颜色代码("#F8F9FA")。
+            当同时指定颜色和style时，style优先。
         
         style (str, 可选): 
             预设风格，可选值: "ocean", "forest", "sunset", "berry", 
             "fire", "mint", "chocolate", "night"。
-            当同时指定colors和style时，style优先。
+            当同时指定颜色和style时，style优先。
         
         dot_shape (str, 可选): 
             码点形状。可选值: "square"(方形) 或 "circle"(圆形)。默认为"square"。
@@ -80,7 +86,7 @@ def make_cool_qrcode(
         make_cool_qrcode("Hello, World!", filename="my_qr.png")
         
         # 自定义颜色
-        make_cool_qrcode("Hello", colors=("blue", "white"))
+        make_cool_qrcode("Hello", fill_color="blue", back_color="white")
         
         # 使用预设风格
         make_cool_qrcode("Hello", style="ocean")
@@ -107,7 +113,7 @@ def make_cool_qrcode(
         )
     
     注意:
-        1. 组合效果时，style会覆盖colors设置
+        1. 组合效果时，style会覆盖fill_color和back_color设置
         2. 当使用蒙板效果时，图像会自动转换为RGBA模式
         3. 当logo_path不存在时，会抛出异常
         4. 如果指定filename，函数会自动保存图像并打印确认信息
@@ -120,12 +126,6 @@ def make_cool_qrcode(
             print(f"⚠️ 风格 '{style}' 不存在，使用默认风格 'ocean'")
             style = "ocean"
         fill_color, back_color = PRETTY_COLORS[style]
-    elif colors:
-        # 使用自定义颜色
-        fill_color, back_color = colors
-    else:
-        # 使用默认颜色
-        fill_color, back_color = "black", "white"
     
     # 2. 创建基础二维码
     qr = CoolQRCode(fill_color=fill_color, back_color=back_color)
@@ -169,7 +169,8 @@ def make_qrcode(
     text: str,
     filename: Optional[str] = None,
     size: int = 500,
-    colors: Optional[tuple] = None,
+    fill_color: str = "black",
+    back_color: str = "white",
     dot_shape: Literal["square", "circle"] = "square"
 ) -> Image.Image:
     """
@@ -179,7 +180,8 @@ def make_qrcode(
         text: 二维码内容
         filename: 保存文件名（可选）
         size: 图片大小（像素）
-        colors: 颜色元组 (前景色, 背景色)，如 ("black", "white")
+        fill_color: 前景色（码点颜色）
+        back_color: 背景色
         dot_shape: 码点形状 "square"(方形) 或 "circle"(圆形)
     
     返回:
@@ -193,7 +195,7 @@ def make_qrcode(
         make_qrcode("Hello World!", filename="my_qr.png")
         
         # 彩色二维码
-        make_qrcode("Hello World!", colors=("red", "yellow"))
+        make_qrcode("Hello World!", fill_color="red", back_color="yellow")
         
         # 圆形码点
         make_qrcode("Hello World!", dot_shape="circle")
@@ -202,7 +204,8 @@ def make_qrcode(
         text=text,
         filename=filename,
         size=size,
-        colors=colors,
+        fill_color=fill_color,
+        back_color=back_color,
         dot_shape=dot_shape
     )
 
@@ -237,7 +240,8 @@ def make_colorful_qrcode(
         text=text,
         filename=filename,
         size=size,
-        colors=(fill_color, back_color),
+        fill_color=fill_color,
+        back_color=back_color,
         dot_shape=dot_shape
     )
 
@@ -247,7 +251,8 @@ def make_qrcode_with_logo(
     logo_path: str,
     filename: Optional[str] = None,
     size: int = 500,
-    colors: Optional[tuple] = None,
+    fill_color: str = "black",
+    back_color: str = "white",
     dot_shape: Literal["square", "circle"] = "square",
     logo_circular: bool = True
 ) -> Image.Image:
@@ -259,7 +264,8 @@ def make_qrcode_with_logo(
         logo_path: Logo图片文件路径
         filename: 保存文件名（可选）
         size: 图片大小
-        colors: 颜色元组 (前景色, 背景色)
+        fill_color: 前景色（码点颜色）
+        back_color: 背景色
         dot_shape: 码点形状
         logo_circular: Logo是否为圆形
     
@@ -271,7 +277,8 @@ def make_qrcode_with_logo(
         make_qrcode_with_logo(
             "Hello!", 
             "logo.png", 
-            colors=("purple", "lavender"),
+            fill_color="purple",
+            back_color="lavender",
             dot_shape="circle"
         )
     """
@@ -279,7 +286,8 @@ def make_qrcode_with_logo(
         text=text,
         filename=filename,
         size=size,
-        colors=colors,
+        fill_color=fill_color,
+        back_color=back_color,
         dot_shape=dot_shape,
         logo_path=logo_path,
         logo_circular=logo_circular
@@ -292,6 +300,8 @@ def make_qrcode_with_mask(
     mask_opacity: float = 0.3,
     filename: Optional[str] = None,
     size: int = 500,
+    fill_color: str = "black",
+    back_color: str = "white",
     dot_shape: Literal["square", "circle"] = "square"
 ) -> Image.Image:
     """
@@ -303,6 +313,8 @@ def make_qrcode_with_mask(
         mask_opacity: 蒙板透明度 (0.0-1.0, 0完全透明，1完全不透明)
         filename: 保存文件名（可选）
         size: 图片大小
+        fill_color: 前景色（码点颜色）
+        back_color: 背景色
         dot_shape: 码点形状
     
     示例:
@@ -321,6 +333,8 @@ def make_qrcode_with_mask(
         text=text,
         filename=filename,
         size=size,
+        fill_color=fill_color,
+        back_color=back_color,
         dot_shape=dot_shape,
         mask_color=mask_color,
         mask_opacity=mask_opacity
@@ -479,11 +493,10 @@ def make_pretty_qrcode(
         print(f"⚠️ 风格 '{style}' 不存在，使用默认风格 'ocean'")
         style = "ocean"
     
-    colors = PRETTY_COLORS[style]
     return make_cool_qrcode(
         text=text,
         filename=filename,
         size=size,
-        colors=colors,
+        style=style,
         dot_shape=dot_shape
     ) 

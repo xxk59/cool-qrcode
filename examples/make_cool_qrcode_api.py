@@ -43,10 +43,11 @@ def color_examples():
     print("=== 颜色用法示例 ===")
     
     # 示例1: 自定义颜色
-    # colors参数接受一个元组(前景色, 背景色)
+    # 使用fill_color和back_color参数设置前景色和背景色
     make_cool_qrcode(
         "自定义颜色二维码",
-        colors=("blue", "lightblue"),
+        fill_color="blue",
+        back_color="lightblue",
         filename="custom_colors.png"
     )
     print("✓ 已生成自定义颜色二维码: custom_colors.png")
@@ -55,7 +56,8 @@ def color_examples():
     # 可以使用#RRGGBB格式的十六进制颜色代码
     make_cool_qrcode(
         "十六进制颜色二维码",
-        colors=("#FF6B6B", "#F8F9FA"),
+        fill_color="#FF6B6B",
+        back_color="#F8F9FA",
         filename="hex_colors.png"
     )
     print("✓ 已生成十六进制颜色二维码: hex_colors.png")
@@ -81,7 +83,8 @@ def shape_examples():
     make_cool_qrcode(
         "方形码点二维码",
         dot_shape="square",
-        colors=("red", "white"),
+        fill_color="red",
+        back_color="white",
         filename="square_dots.png"
     )
     print("✓ 已生成方形码点二维码: square_dots.png")
@@ -90,7 +93,8 @@ def shape_examples():
     make_cool_qrcode(
         "圆形码点二维码",
         dot_shape="circle",
-        colors=("green", "white"),
+        fill_color="green",
+        back_color="white",
         filename="circle_dots.png"
     )
     print("✓ 已生成圆形码点二维码: circle_dots.png")
@@ -180,7 +184,8 @@ def combination_examples():
     # 示例3: 圆形码点 + Logo + 蒙板
     make_cool_qrcode(
         "圆点+Logo+蒙板",
-        colors=("darkblue", "white"),
+        fill_color="darkblue",
+        back_color="white",
         dot_shape="circle",
         logo_path=logo_path,
         mask_color="blue",

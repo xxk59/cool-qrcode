@@ -51,7 +51,8 @@ make_cool_qrcode(
 make_cool_qrcode(
     "Hello, Circle!",
     dot_shape="circle",
-    colors=("green", "white"),
+    fill_color="green",
+    back_color="white",
     filename="circle_dots.png"
 )
 ```
@@ -98,7 +99,8 @@ make_cool_qrcode(
     text,                  # 二维码内容
     filename=None,         # 保存文件名
     size=500,              # 图片大小
-    colors=None,           # 自定义颜色(前景色,背景色)
+    fill_color="black",    # 前景色
+    back_color="white",    # 背景色
     style=None,            # 预设风格
     dot_shape="square",    # 码点形状
     logo_path=None,        # Logo路径
