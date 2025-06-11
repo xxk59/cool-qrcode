@@ -96,7 +96,7 @@ make_cool_qrcode(
 
 ```python
 make_cool_qrcode(
-    text,                  # 二维码内容
+    data,                  # 二维码内容
     filename=None,         # 保存文件名
     size=500,              # 图片大小
     fill_color="black",    # 前景色

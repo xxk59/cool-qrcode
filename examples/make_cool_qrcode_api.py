@@ -2,6 +2,9 @@
 """
 make_cool_qrcode API示例
 演示Cool QRCode库万能函数的使用方法
+
+注意: 所有函数的'text'参数已更名为'data'参数以与qrcode库保持一致，
+但为了保持向后兼容性，可以直接传递字符串作为第一个位置参数。
 """
 
 from cool_qrcode import make_cool_qrcode, create_sample_logo
@@ -12,8 +15,9 @@ def basic_examples():
     """基础用法示例"""
     print("=== 基础用法示例 ===")
     
-    # 示例1: 最基本用法 - 只提供文本内容
+    # 示例1: 最基本用法 - 只提供内容
     # 默认大小为500x500像素，方形码点，黑白色
+    # 注: 第一个参数是data (二维码内容)
     qr1 = make_cool_qrcode("https://github.com/xxk59/cool-qrcode")
     qr1.save("basic_qr.png")
     print("✓ 已生成基本二维码: basic_qr.png")
@@ -21,7 +25,7 @@ def basic_examples():
     # 示例2: 保存到文件
     # 如果提供filename参数，会自动保存文件
     make_cool_qrcode(
-        "这是自动保存的二维码",
+        "这是自动保存的二维码",  # data参数
         filename="auto_saved.png"
     )
     print("✓ 已自动保存二维码: auto_saved.png")
@@ -29,7 +33,7 @@ def basic_examples():
     # 示例3: 自定义大小
     # size参数控制图像尺寸，默认为500
     make_cool_qrcode(
-        "大尺寸二维码",
+        "大尺寸二维码",  # data参数
         size=800,
         filename="large_qr.png"
     )

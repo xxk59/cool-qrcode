@@ -13,7 +13,7 @@ from .exceptions import CoolQRCodeError
 
 
 def make_cool_qrcode(
-    text: str,
+    data: str,
     filename: Optional[str] = None,
     size: int = 500,
     # 颜色选项
@@ -36,7 +36,7 @@ def make_cool_qrcode(
     形状、Logo和蒙板效果的二维码，所有效果可以任意组合。
 
     参数:
-        text (str): 
+        data (str): 
             二维码内容，必须非空。可以是网址、文本、联系信息等。
         
         filename (str, 可选): 
@@ -129,7 +129,7 @@ def make_cool_qrcode(
     
     # 2. 创建基础二维码
     qr = CoolQRCode(fill_color=fill_color, back_color=back_color)
-    qr.add_data(text)
+    qr.add_data(data)
     
     # 3. 生成图像（根据是否有Logo选择不同方法）
     if logo_path:
@@ -166,7 +166,7 @@ def make_cool_qrcode(
 
 
 def make_qrcode(
-    text: str,
+    data: str,
     filename: Optional[str] = None,
     size: int = 500,
     fill_color: str = "black",
@@ -177,7 +177,7 @@ def make_qrcode(
     生成基本二维码 - 最简单的方式
     
     参数:
-        text: 二维码内容
+        data: 二维码内容
         filename: 保存文件名（可选）
         size: 图片大小（像素）
         fill_color: 前景色（码点颜色）
@@ -201,7 +201,7 @@ def make_qrcode(
         make_qrcode("Hello World!", dot_shape="circle")
     """
     return make_cool_qrcode(
-        text=text,
+        data=data,
         filename=filename,
         size=size,
         fill_color=fill_color,
@@ -211,7 +211,7 @@ def make_qrcode(
 
 
 def make_colorful_qrcode(
-    text: str,
+    data: str,
     fill_color: str = "blue",
     back_color: str = "lightblue",
     filename: Optional[str] = None,
@@ -222,7 +222,7 @@ def make_colorful_qrcode(
     生成彩色二维码
     
     参数:
-        text: 二维码内容
+        data: 二维码内容
         fill_color: 前景色（码点颜色）
         back_color: 背景色
         filename: 保存文件名（可选）
@@ -237,7 +237,7 @@ def make_colorful_qrcode(
         make_colorful_qrcode("Hello!", "red", "pink", dot_shape="circle")
     """
     return make_cool_qrcode(
-        text=text,
+        data=data,
         filename=filename,
         size=size,
         fill_color=fill_color,
@@ -247,7 +247,7 @@ def make_colorful_qrcode(
 
 
 def make_qrcode_with_logo(
-    text: str,
+    data: str,
     logo_path: str,
     filename: Optional[str] = None,
     size: int = 500,
@@ -260,7 +260,7 @@ def make_qrcode_with_logo(
     生成带Logo的二维码
     
     参数:
-        text: 二维码内容
+        data: 二维码内容
         logo_path: Logo图片文件路径
         filename: 保存文件名（可选）
         size: 图片大小
@@ -283,7 +283,7 @@ def make_qrcode_with_logo(
         )
     """
     return make_cool_qrcode(
-        text=text,
+        data=data,
         filename=filename,
         size=size,
         fill_color=fill_color,
@@ -295,7 +295,7 @@ def make_qrcode_with_logo(
 
 
 def make_qrcode_with_mask(
-    text: str,
+    data: str,
     mask_color: str = "blue",
     mask_opacity: float = 0.3,
     filename: Optional[str] = None,
@@ -308,7 +308,7 @@ def make_qrcode_with_mask(
     生成带半透明蒙板的二维码
     
     参数:
-        text: 二维码内容
+        data: 二维码内容
         mask_color: 蒙板颜色
         mask_opacity: 蒙板透明度 (0.0-1.0, 0完全透明，1完全不透明)
         filename: 保存文件名（可选）
@@ -330,7 +330,7 @@ def make_qrcode_with_mask(
         )
     """
     return make_cool_qrcode(
-        text=text,
+        data=data,
         filename=filename,
         size=size,
         fill_color=fill_color,
@@ -465,7 +465,7 @@ PRETTY_COLORS = {
 
 
 def make_pretty_qrcode(
-    text: str,
+    data: str,
     style: str = "ocean",
     filename: Optional[str] = None,
     size: int = 500,
@@ -475,7 +475,7 @@ def make_pretty_qrcode(
     使用预设的漂亮颜色生成二维码
     
     参数:
-        text: 二维码内容
+        data: 二维码内容
         style: 颜色风格，可选: "ocean", "forest", "sunset", "berry", 
                "fire", "mint", "chocolate", "night"
         filename: 保存文件名（可选）
@@ -494,7 +494,7 @@ def make_pretty_qrcode(
         style = "ocean"
     
     return make_cool_qrcode(
-        text=text,
+        data=data,
         filename=filename,
         size=size,
         style=style,
