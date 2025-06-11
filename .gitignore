@@ -1,0 +1,83 @@
+# Python字节码文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# 分发/打包相关
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 单元测试/覆盖率报告
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# 虚拟环境
+env/
+venv/
+ENV/
+.env
+.venv
+env.bak/
+venv.bak/
+
+# IDE 相关
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 项目特定文件
+# 生成的二维码示例文件
+*.png
+# 但要保留README中的示例图片
+!docs/images/*.png
+
+# 示例生成的目录
+make_cool_qrcode_examples/
+color_samples/
+
+# 临时文件
+tmp/
+temp/
+
+# pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+
+# 其他
+__pypackages__/
+.history/
+.vs/
+.spyderproject
+.spyproject
+*.log
+.ipynb_checkpoints
+profile_default/
+ipython_config.py 
